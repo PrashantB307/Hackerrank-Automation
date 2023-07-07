@@ -1,3 +1,5 @@
+//  These are the Codes of the all Questions
+
 module.exports = {
     answer: [
 `#include <cmath>
