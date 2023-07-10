@@ -37,3 +37,8 @@ browserOpenPromise.then(function(browser) {
     let emailwillTypePromise = cTab.type("input[name = 'username']", email, {delay:100});
     return emailwillTypePromise;
 })
+.then(function () {
+    console.log("Email is typed");
+    let passwordwillTypePromise = cTab.type("input[type = 'password']", password);
+    return passwordwillTypePromise;
+})
