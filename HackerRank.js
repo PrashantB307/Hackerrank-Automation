@@ -55,3 +55,8 @@ browserOpenPromise.then(function(browser) {
     let algoOpenPromise = waitAndClick("div[data-automation ='algorithms']");
     return algoOpenPromise;
 })
+.then(function () {
+    console.log ("Algorithm page is Opened");
+    let allQuesPromise = cTab.waitForSelector("a[data-analytics='ChallengeListChallengeName']");
+    return allQuesPromise;
+})
