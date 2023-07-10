@@ -42,3 +42,16 @@ browserOpenPromise.then(function(browser) {
     let passwordwillTypePromise = cTab.type("input[type = 'password']", password);
     return passwordwillTypePromise;
 })
+.then(function () {
+    console.log("Password is typed");
+    let willLoggedPromise = cTab.click(".ui-btn.ui-btn-large.ui-btn-primary.auth-button.ui-btn-styled"
+        );
+        return willLoggedPromise; 
+})
+.then(function () {
+    console.log("Logged in to Hackerrank successfully");
+    //--waitAndClick :=> It will wait for the entire webpage to load 
+                        // and then click on the node.
+    let algoOpenPromise = waitAndClick("div[data-automation ='algorithms']");
+    return algoOpenPromise;
+})
