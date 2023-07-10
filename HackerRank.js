@@ -23,3 +23,10 @@ browserOpenPromise.then(function(browser) {
     let alltabsPromise = browser.pages();
     return alltabsPromise;
 })
+.then(function (allTabsArr) {
+    cTab = allTabsArr[0];
+    console.log("new tab");
+    //URL to navigate page to
+    let visitLoginPage = cTab.goto("https://www.hackerrank.com/auth/login");
+    return visitLoginPage;
+})
