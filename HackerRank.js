@@ -60,3 +60,16 @@ browserOpenPromise.then(function(browser) {
     let allQuesPromise = cTab.waitForSelector("a[data-analytics='ChallengeListChallengeName']");
     return allQuesPromise;
 })
+.then(function () {
+    function getAllQuesLink() {
+        let allElemArr = document.querySelectorAll("a[data-analytics='ChallengeListChallengeName']");
+        let linksArr = [];
+        for(let i = 0; i < allElemArr.length; i++){
+            linksArr.push(allElemArr[i].getAttribute("href"));
+        }
+        return linksArr;
+    }
+
+    let linksArrPromise = cTab.evaluate(getAllQuesLink);
+    return linksArrPromise;
+})
