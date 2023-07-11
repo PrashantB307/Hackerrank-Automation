@@ -73,3 +73,17 @@ browserOpenPromise.then(function(browser) {
     let linksArrPromise = cTab.evaluate(getAllQuesLink);
     return linksArrPromise;
 })
+.then(function (linksArr) {
+    console.log("Links to all ques. received");
+    //console.log(linksArr);
+    //Questions solve krna h
+
+    //Links to the quiestions to be solved , idx of the linksArr
+    let quesWillSolvePromise = questionSolver(linksArr[0], 0);
+    for(let i = 1; i < linksArr.length; i++){
+        quesWillSolvePromise = quesWillSolvePromise.then(function () {
+            return questionSolver(linksArr[i], i);
+        })
+    }
+    return quesWillSolvePromise;
+})
