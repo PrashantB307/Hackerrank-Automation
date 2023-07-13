@@ -102,7 +102,14 @@ function waitAndClick(algoBtn) {
             let clickPromise = cTab.click(algoBtn);
             return clickPromise;
         })
-       
+        .then(function () {
+            console.log("Algo btn is clicked");
+            resolve();
+            
+        })
+        .catch(function (err) {
+            reject(err);
+        })
     }); 
     return waitClickPromise;
 }
