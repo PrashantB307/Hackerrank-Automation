@@ -94,3 +94,16 @@ browserOpenPromise.then(function(browser) {
     console.log(err);
 });
 
+function waitAndClick(algoBtn) {
+    let waitClickPromise = new Promise(function (resolve, reject) {
+        let waiTfoPromise = cTab.waitForSelector(algoBtn);
+        waiTfoPromise.then(function () {
+            console.log("Algo btn is found");
+            let clickPromise = cTab.click(algoBtn);
+            return clickPromise;
+        })
+       
+    }); 
+    return waitClickPromise;
+}
+
