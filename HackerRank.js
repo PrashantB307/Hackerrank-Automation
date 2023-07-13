@@ -87,3 +87,10 @@ browserOpenPromise.then(function(browser) {
     }
     return quesWillSolvePromise;
 })
+.then(function () {
+    console.log("Question is Solved");
+})
+.catch(function (err) {
+    console.log(err);
+});
+
