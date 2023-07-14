@@ -125,6 +125,11 @@ function questionSolver(url, idx) {
         let waitForChekBoxandClickPromise = waitAndClick(".checkbox-input");
         return waitForChekBoxandClickPromise;
         })
+        .then(function () {
+            //select the box where code will be typed
+            let waitForTextBoxPromise = cTab.waitForSelector(".custominput");
+            return waitForTextBoxPromise;
+        })
         
     });
 }
