@@ -114,3 +114,11 @@ function waitAndClick(algoBtn) {
     return waitClickPromise;
 }
 
+function questionSolver(url, idx) {
+    return new Promise(function (resolve, reject) {
+    let fullLink = `https://www.hackerrank.com${url}`;
+    let goToQuesPagePromise = cTab.goto(fullLink);
+    
+    });
+}
+
