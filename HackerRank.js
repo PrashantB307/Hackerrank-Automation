@@ -134,6 +134,11 @@ function questionSolver(url, idx) {
             let codeWilltypedPromise = cTab.type(".custominput", answer[idx], {delay:100});
             return codeWilltypedPromise;
         })
+        .then(function () {
+            // control key is press promise
+            let controlpresslPromise = cTab.keyboard.press("Control");
+            return controlpresslPromise;
+        })
         
     });
 }
