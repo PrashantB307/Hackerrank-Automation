@@ -130,6 +130,10 @@ function questionSolver(url, idx) {
             let waitForTextBoxPromise = cTab.waitForSelector(".custominput");
             return waitForTextBoxPromise;
         })
+        .then(function () {
+            let codeWilltypedPromise = cTab.type(".custominput", answer[idx], {delay:100});
+            return codeWilltypedPromise;
+        })
         
     });
 }
