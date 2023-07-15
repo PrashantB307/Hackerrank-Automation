@@ -139,7 +139,12 @@ function questionSolver(url, idx) {
             let controlpresslPromise = cTab.keyboard.press("Control");
             return controlpresslPromise;
         })
-        
+        .then(function () {
+            // a key is press promise
+            let aKeypresslPromise = cTab.keyboard.press("a");
+            return aKeypresslPromise;
+        })
+       
     });
 }
 
