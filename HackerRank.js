@@ -163,6 +163,16 @@ function questionSolver(url, idx) {
             let ctrlPressedPromise = cTab.keyboard.down("Control");
             return ctrlPressedPromise;
         })
+        .then(function () {
+            // a key is press promise
+            let aKeypresslPromise = cTab.keyboard.press("A",{delay:100});
+            return aKeypresslPromise;
+        })
+        .then(function () {
+            // v key is press promise
+            let vKeypresslPromise = cTab.keyboard.press("V",{delay:100});
+            return vKeypresslPromise;
+        })
         
     });
 }
