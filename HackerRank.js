@@ -173,7 +173,21 @@ function questionSolver(url, idx) {
             let vKeypresslPromise = cTab.keyboard.press("V",{delay:100});
             return vKeypresslPromise;
         })
-        
+        .then(function () {
+            let ctrlDownPromise = cTab.keyboard.up("Control");
+            return ctrlDownPromise;
+        })
+        .then(function () {
+            let submitBtnClickPromise = cTab.click(".hr-monaco-submit");
+            return submitBtnClickPromise;
+        })
+        .then(function () {
+            console.log("Code is Submitted Successfully");
+            resolve();
+        })
+        .catch(function (err) {
+           reject(err);
+        });
     });
 }
 
