@@ -144,6 +144,11 @@ function questionSolver(url, idx) {
             let aKeypresslPromise = cTab.keyboard.press("a");
             return aKeypresslPromise;
         })
+        .then(function () {
+            // x key is press promise
+            let xKeypresslPromise = cTab.keyboard.press("x");
+            return xKeypresslPromise;
+        })
        
     });
 }
