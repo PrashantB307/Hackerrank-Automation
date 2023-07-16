@@ -158,6 +158,11 @@ function questionSolver(url, idx) {
             let cusorOnEditorPromise = cTab.click(".monaco-editor.no-user-select .vs");
             return cusorOnEditorPromise;
         })
+        .then(function () {
+            //ctrl key is pressed promise
+            let ctrlPressedPromise = cTab.keyboard.down("Control");
+            return ctrlPressedPromise;
+        })
         
     });
 }
