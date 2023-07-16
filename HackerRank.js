@@ -149,7 +149,11 @@ function questionSolver(url, idx) {
             let xKeypresslPromise = cTab.keyboard.press("x");
             return xKeypresslPromise;
         })
-       
+        .then(function () {
+            let ctrlReleasePromise = cTab.keyboard.up("Control");
+            return ctrlReleasePromise;
+        })
+        
     });
 }
 
